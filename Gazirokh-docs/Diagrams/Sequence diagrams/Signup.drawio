@@ -1,0 +1,135 @@
+<mxfile host="65bd71144e">
+    <diagram id="B1txfbkFSJCXRbgI-ZHX" name="Page-1">
+        <mxGraphModel dx="822" dy="420" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10000" pageHeight="10000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="15" value="User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="230" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Signup page" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+                    <mxGeometry x="430" y="230" width="100" height="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="endArrow=none;dashed=1;html=1;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="235" y="680" as="sourcePoint"/>
+                        <mxPoint x="234.67" y="310" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="" style="endArrow=classic;html=1;" parent="1" target="16" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="230" y="330" as="sourcePoint"/>
+                        <mxPoint x="510" y="380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="Enter user details" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="290" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+                    <mxGeometry x="475" y="400" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="Check the format of the entered data." style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" parent="1" target="25" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="480" y="380" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="500" y="410"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="" style="endArrow=classic;html=1;" parent="1" source="16" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="460" y="430" as="sourcePoint"/>
+                        <mxPoint x="240" y="440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="False: Send error to user" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="400" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="endArrow=classic;html=1;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="485.00000000000006" y="460" as="sourcePoint"/>
+                        <mxPoint x="754.8" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="Authentication Service" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+                    <mxGeometry x="710" y="230" width="100" height="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="30">
+                    <mxGeometry x="50" y="257.5" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="Check if user exists (username/email)" style="html=1;align=left;spacingLeft=2;endArrow=block;rounded=0;edgeStyle=orthogonalEdgeStyle;curved=0;rounded=0;" edge="1" target="43" parent="30">
+                    <mxGeometry x="-0.0037" relative="1" as="geometry">
+                        <mxPoint x="55" y="237.5" as="sourcePoint"/>
+                        <Array as="points">
+                            <mxPoint x="75" y="267.5"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="34" value="True : Send signup information" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="400" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="True: show message &quot;User already exists&quot;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="495" y="500" width="270" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="16">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="760" y="540" as="sourcePoint"/>
+                        <mxPoint x="520" y="540" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="49" value="Database" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
+                    <mxGeometry x="1030" y="230" width="100" height="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="False:&amp;nbsp; Create new User" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="795" y="520" width="270" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="30" target="49">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1060" y="560" as="sourcePoint"/>
+                        <mxPoint x="780" y="560" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="930" y="560"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="56" value="Confirm user creation" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="830" y="570" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="30" target="16">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="740" y="620" as="sourcePoint"/>
+                        <mxPoint x="484.9966666666665" y="620" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="595.33" y="620"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="58" value="Send signup success" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="485" y="580" width="270" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="Send signup result" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="215" y="610" width="270" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="480" y="650" as="sourcePoint"/>
+                        <mxPoint x="240" y="650" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="315.33000000000004" y="650"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="61" value="" style="endArrow=classic;html=1;" edge="1" parent="1" source="49" target="30">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="1080" y="610" as="sourcePoint"/>
+                        <mxPoint x="774.17" y="650" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="920" y="600"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

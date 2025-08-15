@@ -1,7 +1,9 @@
 <?php 
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\DB;
-use Tymon\JWTAuth\Facades\JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
+use App\Http\Controllers\AuthController;
+
+
+Route::post('/RequestOtp',[AuthController::class,'requestOtp']);
+Route::post('/VerifyOtp',[AuthController::class,'verifyOtp']);
+Route::middleware('auth:api')->post('/logout',[AuthController::class,'logout']);

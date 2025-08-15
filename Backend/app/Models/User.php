@@ -8,8 +8,11 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject {
     protected $table = "user_tbl";
+    protected $primaryKey = 'UserId'; 
+    public $incrementing = true; 
+    protected $keyType = 'int'; 
     protected $fillable = [
-        'email','password','last_login','ProfilePIcture'
+        'email','phone','password','last_login','ProfilePIcture'
     ];
 
 

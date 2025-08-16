@@ -13,7 +13,7 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 use Kavenegar\KavenegarApi;
-
+use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller{
 
     public function requestOtp(Request $request) {
@@ -74,12 +74,15 @@ class AuthController extends Controller{
                 'phone'=>$otpRecord->phone
             ]);
         }
+
+        $user->update(['last_login' => Carbon::now()]);
         
         $token = JWTAuth::fromUser($user);
 
         return response()->json([
             'token' =>  $token,
-            'expires_in' => JWTAuth::factory()->getTTL() * 60
+            'expires_in' => JWTAuth::factory()->getTTL() * 60,
+            'user' => $user
         ]);
         
     }//verifyOtp
@@ -116,5 +119,40 @@ class AuthController extends Controller{
             ], 500);
         }
     }//logout
+
+
+    public function loginWithPassword(Request $request) {
+        $request->validate([
+            "login" => "required|string",
+            "password" => "required|string"
+            
+        ]);
+
+
+        $login  = $request->input('login');
+        $password = $request->input('password');
+
+        if(filter_var($login,FILTER_VALIDATE_EMAIL)) {
+            $user  = User::where('email',$login)->first();
+        }else if(preg_match('/^09[0-9]{9}$/',$login)){
+            $user  = User::where('phone',$login)->first();
+        } else {
+            return response()->json(['message' => 'ایمیل یا شماره موبایل معتبر نیست'], 422);
+        }
+
+        if(!$user || $user->password !== $password) {
+            return response()->json(['message' => 'نام کاربری یا رمز عبور اشتباه است'], 401);
+        }
+
+        $user->update(['last_login' => Carbon::now()]);
+
+        $token = JWTAuth::FromUser($user);
+
+        return response()->json([
+            'token' => $token,
+            'expires_at' => JWTAuth::factory()->getTTL() * 60,
+            'user' => $user
+        ]);
+    }//loginWithPassword
     
 }//class
